@@ -15,7 +15,7 @@ url = " https://api.vozy.ai/v2/chat/"+agent
 
 
 headers = {
-    'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InhYdGVwY3ZLQjVBQzQxQ1JnbzZjViJ9.eyJpc3MiOiJodHRwczovL2xvZ2luLnZvenkuYWkvIiwic3ViIjoiYXV0aDB8NjE5NTUzM2FjMGQyODQwMDcwNWY5MWIwIiwiYXVkIjpbImh0dHBzOi8vYXBpLnZvenkuYWkvYXV0aCIsImh0dHBzOi8vdm96eS51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjQwMjA3MjI4LCJleHAiOjE2NDAyOTM2MjgsImF6cCI6IjhzRWNIbkpHaERmc2k2QnpXTDdqNHRQazlmNjJQdUlvIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsIm9yZ19pZCI6Im9yZ19nUVA4aGRJYU4xeTR0RTI2In0.j2plo6evWdhMza7JRoSr9UGqgYGe3csgwm_5nfDNuTYJLEkFZeNBcJw3lKptmSPqTSXxz4v1lF8cezQIMVvWNFxqxQHog6SESwPAHMPMXlX2aJr2g7qFx2YGGit96fEW7Pi0J8tELRnSbsEe-a8BZ6nRHL3tIvASTxU7ijdRamnhEmiTkzwBNz-D8AxkdI79XdxzLpUGJFIowfN19cAkYEaBPlaxoGvHxXQ-uVmLVbAud_64gz-B6RcnN2bzPGIQGtDqH1kjgcOMuCjXk05ouhyLwm0CPWykPZdjQ73xtFxeIV8QfWxpO2za4gp16H9CD_F791kImTnRF4c7MiVPJweyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InhYdGVwY3ZLQjVBQzQxQ1JnbzZjViJ9.eyJpc3MiOiJodHRwczovL2xvZ2luLnZvenkuYWkvIiwic3ViIjoiYXV0aDB8NjE5NTUzM2FjMGQyODQwMDcwNWY5MWIwIiwiYXVkIjpbImh0dHBzOi8vYXBpLnZvenkuYWkvYXV0aCIsImh0dHBzOi8vdm96eS51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjQwMjA3MjI4LCJleHAiOjE2NDAyOTM2MjgsImF6cCI6IjhzRWNIbkpHaERmc2k2QnpXTDdqNHRQazlmNjJQdUlvIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsIm9yZ19pZCI6Im9yZ19nUVA4aGRJYU4xeTR0RTI2In0.j2plo6evWdhMza7JRoSr9UGqgYGe3csgwm_5nfDNuTYJLEkFZeNBcJw3lKptmSPqTSXxz4v1lF8cezQIMVvWNFxqxQHog6SESwPAHMPMXlX2aJr2g7qFx2YGGit96fEW7Pi0J8tELRnSbsEe-a8BZ6nRHL3tIvASTxU7ijdRamnhEmiTkzwBNz-D8AxkdI79XdxzLpUGJFIowfN19cAkYEaBPlaxoGvHxXQ-uVmLVbAud_64gz-B6RcnN2bzPGIQGtDqH1kjgcOMuCjXk05ouhyLwm0CPWykPZdjQ73xtFxeIV8QfWxpO2za4gp16H9CD_F791kImTnRF4c7MiVPJw',
+    'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InhYdGVwY3ZLQjVBQzQxQ1JnbzZjViJ9.eyJpc3MiOiJodHRwczovL2xvZ2luLnZvenkuYWkvIiwic3ViIjoiYXV0aDB8NjE5NTUzM2FjMGQyODQwMDcwNWY5MWIwIiwiYXVkIjpbImh0dHBzOi8vYXBpLnZvenkuYWkvYXV0aCIsImh0dHBzOi8vdm96eS51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjQwNzk0NTQzLCJleHAiOjE2NDA4ODA5NDMsImF6cCI6IjhzRWNIbkpHaERmc2k2QnpXTDdqNHRQazlmNjJQdUlvIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsIm9yZ19pZCI6Im9yZ19nUVA4aGRJYU4xeTR0RTI2In0.IHvyEBaygIDhZh7TEyrS9rv5xD3cyxj-JpWt7P4QeMLJMXddmsNSYR-OmB5tlLZN417qzjXXMcjem_0BTgOTm8iMbxImAap_0XWJDSnIHmZ63OuSMP9zvIb_Fev7SsN6iO8igq1XuXHyOGaCGBeL8g2jXRDNPY59klXUfmCFoMGSQ_iOPjSOOtStggDyVSBRmE06kG5epGh5gbyiOmJR_z9uOam9Fs0hCBEQ3pX8gPYBVQL55JNQ3QTxxaVKIa0dyS9p8tGZwFUzNjPm5yNg_tH9prN-q5BuC_bCO6q7VbGsFMfW6p5Ng_SPpE0pNpZ_AJS9AIWgKpjQ23Pf99XKgQ',
     'Content-Type': 'application/json'
 }
 
@@ -37,7 +37,7 @@ class Chats:
 
 def test_chat_with_lili():
 
-    dic = load_file_with_data('flow1.csv')
+    dic = load_file_with_data('debt_collection_flow1.csv')
 
     chats_to_test = get_chats_to_test(dic)
 
@@ -52,7 +52,7 @@ def test_chat_with_lili():
                 "from": identificator,
                 "body": item})
 
-            time.sleep(1.2)
+            time.sleep(1.3)
 
             response = requests.request(
                 "POST", url, headers=headers, data=payload)
@@ -96,4 +96,5 @@ def get_chats_to_test(chats_to_test):
     return chats
 
 
+test_chat_with_lili()
 
