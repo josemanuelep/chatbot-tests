@@ -9,6 +9,7 @@ Usign python to test API emulation chat between agent and person
 - The data test is stored in csv file separeted by ; 
 - The automation test the status code of response
 - Also check the body message
+- The given excel to data has golden paths
 
 
 
