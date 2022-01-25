@@ -12,6 +12,7 @@ Usign python to test API emulation chat between agent and person
 - The automation test the status code of response
 - Also check the body message
 - The given excel to data has golden paths
+- The las item of the excel is de expected response
 
 
 
