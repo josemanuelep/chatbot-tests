@@ -16,7 +16,7 @@ url = " https://api.vozy.ai/v2/chat/"+agent
 
 
 headers = {
-    'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InhYdGVwY3ZLQjVBQzQxQ1JnbzZjViJ9.eyJpc3MiOiJodHRwczovL2xvZ2luLnZvenkuYWkvIiwic3ViIjoiYXV0aDB8NjE5NTUzM2FjMGQyODQwMDcwNWY5MWIwIiwiYXVkIjpbImh0dHBzOi8vYXBpLnZvenkuYWkvYXV0aCIsImh0dHBzOi8vdm96eS51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjQxOTMxMDk0LCJleHAiOjE2NDIwMTc0OTQsImF6cCI6IjhzRWNIbkpHaERmc2k2QnpXTDdqNHRQazlmNjJQdUlvIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsIm9yZ19pZCI6Im9yZ19nUVA4aGRJYU4xeTR0RTI2In0.lHgBIuG9NdPPHM65Pi4ODhM72VXLDzU2-OGPNPUVBcDX65mY-vlT3Dm9ONBLOGdgfh9u1LukVulSGC8EaBajuuA_hU4JqkQXXjOBdetRQfHH2oos6ILbdAxqBfXRZZ-p442Xu7MjtL_JZEZJWLVQr2k-r4aR5pKSRAlgO5KIANJejPEDTRuORVzEV1Iepf1PVI5lQG1ugezeuCNtfrXqH00bSndkCdR1I81xnTO2xDVKOAlNjONaxJe9FTUwJ_h3wOAbWDHDs2wSuwjz8oQ6jMU55j7a8oE68cyI4xv5W_4DCrptAYVJmORZvzojXY5zBLWC7F2J-q13MpxMDBdtSA',
+    'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InhYdGVwY3ZLQjVBQzQxQ1JnbzZjViJ9.eyJpc3MiOiJodHRwczovL2xvZ2luLnZvenkuYWkvIiwic3ViIjoiYXV0aDB8NjE5NTUzM2FjMGQyODQwMDcwNWY5MWIwIiwiYXVkIjpbImh0dHBzOi8vYXBpLnZvenkuYWkvYXV0aCIsImh0dHBzOi8vdm96eS51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjQzMTI4NjA2LCJleHAiOjE2NDMyMTUwMDYsImF6cCI6IjhzRWNIbkpHaERmc2k2QnpXTDdqNHRQazlmNjJQdUlvIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsIm9yZ19pZCI6Im9yZ19nUVA4aGRJYU4xeTR0RTI2In0.nihRZ_lC9j-eKiv4Y_AH5AX3dHqSz5rg6nSpJFybyRuX6GhNmIe8Et9RO4gLVztMzkiS7TNdXGl12BPGgTpPqLBp_y_i1MO9z5vm3W6AEE7QWB316EOD09ClExHil-Gxc8Sg8XSGkx7Br-Qj380R5sY_B6If1zmgJyzLhTGLUBDd9Rx9TtvKqia8JIMmxidvbHt2QcnnGRgF-DzMuSq9CKGNY8k6x2WUWCFEyeXU950uk8qo4GzW_dUZ7DWU_wKJGggDmtUdWXzfJorQSGXstWjmytShi_vU-SJBDwnVR4G9kYHgIV9Wadcak_0sqaS3Iwbj5kLYmtBeJvsyVAmbew',
     'Content-Type': 'application/json'
 }
 
@@ -40,9 +40,9 @@ class Chats:
         return str(self.dict_chats)+'--'+str(self.list_lili_responses)+'--'+str(self.list_intents_names)
 
 
-def test_chat_with_lili():
+def test_recall():
 
-    test_file_name = 'debt_collection_flow1.csv'
+    test_file_name = 'debt_collection_flow2.csv'
 
     dic = load_file_with_data(test_file_name)
 
@@ -70,17 +70,12 @@ def test_chat_with_lili():
 
                 response = requests.request(
                     "POST", url, headers=headers, data=payload)
-                
-                response_of_lili = response.json()['message']
-                # if response_of_lili.lower() == chats_to_test.get_list_responses()[j].lower():
-                #     print('Human: '+utterancce, 'Lili: ' +
-                #           response_of_lili.lower())
-                list_of_posibble_responses.insert(j+1, 0)
-                writer.writerow(list_of_posibble_responses)
+
                 assert_that(response.status_code).is_equal_to(
                     requests.codes.ok)
                 assert_that(response.json()['message']).is_not_empty()
-                assert_that(response.json()['message']).is_equal_to_ignoring_case(chats_to_test.get_list_responses()[j])
+                assert_that(response.json()['message'].strip()).is_equal_to_ignoring_case(
+                    chats_to_test.get_list_responses()[j].strip())
 
 
 def init_chat_with_lili(identificator):
@@ -123,4 +118,3 @@ def get_chats_to_test(chats_to_test):
     return chats
 
 
-test_chat_with_lili()
