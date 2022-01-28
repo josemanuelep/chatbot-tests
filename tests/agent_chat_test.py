@@ -42,7 +42,7 @@ def test_already_paid():
 
     url = " https://api.vozy.ai/v2/chat/"+agent
 
-    test_file_name = 'QA_IPESOPE_final_testeo/gp_contact_no.csv'
+    test_file_name = 'QA_IPESOPE_final_testeo/gp_contact_yes.csv'
 
     dic = load_file_with_data(test_file_name)
 
